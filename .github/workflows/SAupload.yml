@@ -25,7 +25,7 @@ jobs:
         uses: LanceMcCarthy/Action-AzureBlobUpload@v1.11.0
         with:
           # Azure Storage ConnectionString for the container (Azure Portal - select Storage Account - Access Keys blade).
-          connection_string: 'https://tccc-edge-mba-qa-blob-01.azureedge.net/?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-05-17T16:51:35Z&st=2022-05-17T08:51:35Z&spr=https&sig=Svrc%2B8uRzVsgbX2q0YSpIhQIqj4o3LVJVjnhVic548w%3D'
+          connection_string: 'https://sause2tcccmbaqa0001.blob.core.windows.net/?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-05-17T16:51:35Z&st=2022-05-17T08:51:35Z&spr=https&sig=Svrc%2B8uRzVsgbX2q0YSpIhQIqj4o3LVJVjnhVic548w%3D'
           # Blob Container name (e.g. my-container).
           container_name: test
           # The local folder containing all the files and subfolders to upload to the blob container (use a trailing slash)
