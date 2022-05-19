@@ -39,22 +39,22 @@ jobs:
 #           # Set to false if you want all subfolders ignored.
 #           is_recursive: # optional, default is true
 
-      - name: Upload a Build Artifact to Azure Blob Storage
-        # You may pin to the exact commit or the version.
-        # uses: fixpoint/azblob-upload-artifact@71a382e10a29347d552e76a843d2d10a8d0024c7
-        uses: fixpoint/azblob-upload-artifact@v4
-        with:
-          # Connection string
-          connection-string: 'BlobEndpoint=https://tccc-edge-mba-dev-blob-01.azureedge.net/;QueueEndpoint=https://sause2tcccmbadev0001.queue.core.windows.net/;FileEndpoint=https://sause2tcccmbadev0001.file.core.windows.net/;TableEndpoint=https://sause2tcccmbadev0001.table.core.windows.net/;SharedAccessSignature=sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-05-19T15:44:10Z&st=2022-05-19T07:44:10Z&spr=https&sig=7YOE8Pj9geppBAXm22xmA%2B91ufk4wYWLtJINOCeJhCw%3D'
-          # Artifact name
-          name: 'polyfills-5cd94c89d3acac5f.js'
-          # Directory containing files to upload
-          path: /
-          # Container name
-          container: test
-          # Remove all blobs under the target blob (use "true" to enable this option)
-          #cleanup: # optional, default is false
 
+      - name: Azure Storage Action
+        # You may pin to the exact commit or the version.
+        # uses: lauchacarro/Azure-Storage-Action@8191060b843f0a4240dc4759a6c1de0fc624069e
+        uses: lauchacarro/Azure-Storage-Action@v1.1
+        with:
+          # Connection String of the Azure Storage Container
+          connection-string: 'BlobEndpoint=https://tccc-edge-mba-dev-blob-01.azureedge.net/;QueueEndpoint=https://sause2tcccmbadev0001.queue.core.windows.net/;FileEndpoint=https://sause2tcccmbadev0001.file.core.windows.net/;TableEndpoint=https://sause2tcccmbadev0001.table.core.windows.net/;SharedAccessSignature=sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-05-19T15:44:10Z&st=2022-05-19T07:44:10Z&spr=https&sig=7YOE8Pj9geppBAXm22xmA%2B91ufk4wYWLtJINOCeJhCw%3D'
+          # Folder what contains the files for upload to Storage Container
+          folder: \
+          # Name of Blob Container Storage
+          blob-container-name: test
+          # Access Policy to update in the Container
+          #public-access-policy: # optional
+          # Enabled static website
+          #enabled-static-website: # optional  
     
 
         
