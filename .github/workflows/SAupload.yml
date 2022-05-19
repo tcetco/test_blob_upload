@@ -39,22 +39,28 @@ jobs:
 #           # Set to false if you want all subfolders ignored.
 #           is_recursive: # optional, default is true
 
-
-      - name: Azure Storage Action
+      - name: Azure Static Website
         # You may pin to the exact commit or the version.
-        # uses: lauchacarro/Azure-Storage-Action@8191060b843f0a4240dc4759a6c1de0fc624069e
-        uses: lauchacarro/Azure-Storage-Action@v1.1
+        # uses: tibor19/static-website-deploy@e937952c714a3751355a17896498418a9931ded5
+        uses: tibor19/static-website-deploy@v1
         with:
           # Connection String of the Azure Storage Container
           connection-string: 'BlobEndpoint=https://tccc-edge-mba-dev-blob-01.azureedge.net/;QueueEndpoint=https://sause2tcccmbadev0001.queue.core.windows.net/;FileEndpoint=https://sause2tcccmbadev0001.file.core.windows.net/;TableEndpoint=https://sause2tcccmbadev0001.table.core.windows.net/;SharedAccessSignature=sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-05-19T15:44:10Z&st=2022-05-19T07:44:10Z&spr=https&sig=7YOE8Pj9geppBAXm22xmA%2B91ufk4wYWLtJINOCeJhCw%3D'
-          # Folder what contains the files for upload to Storage Container
-          folder: \
-          # Name of Blob Container Storage
+          # Folder containing the files to be uploaded to the Storage Container
+          folder: .
+          # Name of the Blob Container Storage
           blob-container-name: test
-          # Access Policy to update in the Container
-          #public-access-policy: # optional
+          # Access Policy to update in the Container (BlobContainer | Blob | None). For private containers do not specity any value.
+          public-access-policy: Blob
           # Enabled static website
-          #enabled-static-website: # optional  
+          #enabled-static-website: # optional
+          # Index file for the static website
+          #index-file: # optional
+          # 404 Error file for the static website
+          #error-file: # optional
+          # If the existing files should be removed before uploading the new files
+          #remove-existing-files: # optional
+
     
 
         
