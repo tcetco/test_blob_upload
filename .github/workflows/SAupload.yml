@@ -29,7 +29,7 @@ jobs:
           # Blob Container name (e.g. my-container).
           container_name: test
           # The local folder containing all the files and subfolders to upload to the blob container (use a trailing slash)
-          source_folder: 'polyfills-5cd94c89d3acac5f.js'
+          source_folder: 'proba.txt'
           # The target folder to use in the blob container with (do not use a leading or trailing slash)
           destination_folder: # optional
           # This option will delete all the blobs in destination_folder before uploading the new files
@@ -39,7 +39,7 @@ jobs:
           # Set to false if you want all subfolders ignored.
           is_recursive: # optional, default is true
 
-
+      
 
 
     
